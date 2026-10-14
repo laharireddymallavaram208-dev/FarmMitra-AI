@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmRakshak AI – Smart Farming Assistant | రైతు రక్షక్ AI</title>
+  <meta name="description" content="FarmRakshak AI - Crop Risk Checker, Smart Water Advisor, Weather Dashboard, and Farm Records for Indian farmers in English & Telugu.">
+  
+  <!-- Google Fonts: Poppins (English) & Noto Sans Telugu (Telugu) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-banner">
+    <div class="container top-banner-content">
+      <div class="banner-tag">
+        <i class="fa-solid fa-seedling"></i> <span data-i18n="bannerText">FarmRakshak AI • Hackathon Edition • Empowering Indian Agriculture</span>
+      </div>
+      <div class="banner-right">
+        <span class="helpline"><i class="fa-solid fa-phone-volume"></i> <span data-i18n="helplineLabel">Kisan Helpline:</span> <a href="tel:18001801551">1800-180-1551</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="logo-text">
+          <span class="brand-title">FarmRakshak <span class="highlight-ai">AI</span></span>
+          <span class="brand-sub" data-i18n="brandSub">Smart Farming Assistant • రైతు రక్షక్</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-i18n="navHome">Home</a>
+        <a href="#water-advisor" class="nav-link" data-i18n="navWater">Water Advisor</a>
+        <a href="#weather-dashboard" class="nav-link" data-i18n="navWeather">Weather</a>
+        <a href="#crop-risk" class="nav-link" data-i18n="navCropRisk">Crop Risk Checker</a>
+        <a href="#farm-records" class="nav-link" data-i18n="navRecords">Farm Records</a>
+        <a href="#guide" class="nav-link" data-i18n="navGuide">Farming Guide</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+      </nav>
+
+      <!-- Language Switcher & Actions -->
+      <div class="nav-actions">
+        <button class="lang-toggle-btn" id="langToggleBtn" title="Change Language / భాష మార్చండి">
+          <i class="fa-solid fa-language"></i>
+          <span id="langLabel">తెలుగు</span>
+        </button>
+
+        <a href="#crop-risk" class="btn btn-primary btn-sm nav-cta" data-i18n="navCta">
+          <i class="fa-solid fa-magnifying-glass"></i> Check Crop
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Home (Hero Section) -->
+  <section class="hero-section" id="home">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span data-i18n="heroBadge">AI-Powered Farming Intelligence</span>
+        </div>
+        <h1 class="hero-title" data-i18n="heroTitle">
+          Protecting Every Field, <span class="text-gradient">Empowering Every Farmer</span>
+        </h1>
+        <p class="hero-desc" data-i18n="heroDesc">
+          FarmRakshak AI brings smart crop disease risk diagnosis, weather-guided irrigation scheduling, regional market insights, and digital farm record keeping into one simple platform in English and Telugu.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#crop-risk" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-shield-virus"></i> <span data-i18n="btnHeroRisk">Check Crop Risk</span>
+          </a>
+          <a href="#water-advisor" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-droplet"></i> <span data-i18n="btnHeroWater">Smart Water Advisor</span>
+          </a>
+          <a href="#farm-records" class="btn btn-light btn-lg">
+            <i class="fa-solid fa-book-bookmark"></i> <span data-i18n="btnHeroRecords">Farm Records</span>
+          </a>
+        </div>
+
+        <!-- Highlights / Stats -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num">10+</div>
+            <div class="stat-label" data-i18n="statCrops">Indian Crops</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">35%</div>
+            <div class="stat-label" data-i18n="statWater">Water Saved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label" data-i18n="statFree">Free & Open</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">2</div>
+            <div class="stat-label" data-i18n="statLangs">EN & Telugu</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card -->
+      <div class="hero-visual">
+        <div class="glass-card hero-preview-card">
+          <div class="preview-header">
+            <div class="preview-badge"><i class="fa-solid fa-circle-dot live-dot"></i> <span data-i18n="simulatedAiLive">Live AI Field Scan</span></div>
+            <span class="preview-crop-tag" data-i18n="heroCardCrop">Paddy (వరి)</span>
+          </div>
+          <div class="preview-image-container">
+            <div class="preview-overlay-scan"></div>
+            <img src="https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=600&q=80" alt="Crop Field" class="preview-img">
+            <div class="scan-target-box">
+              <span class="scan-tag" data-i18n="leafScanTag">Blast Detected • 94% Risk</span>
+            </div>
+          </div>
+          <div class="preview-footer">
+            <div class="preview-quick-info">
+              <span class="label" data-i18n="quickAdviceLabel">Immediate Advisory:</span>
+              <p class="val" data-i18n="quickAdviceVal">Spray Neem Oil (5ml/L) or Trichoderma culture. Halt urea top-dressing.</p>
+            </div>
+            <a href="#crop-risk" class="btn btn-sm btn-light" data-i18n="btnTryDemo">Full Analysis <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Smart Water Advisor (జల మిత్ర) -->
+  <section class="section water-advisor-section" id="water-advisor">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge" data-i18n="waterBadge">Precision Irrigation & Conservation</div>
+        <h2 class="section-title" data-i18n="waterTitle">Smart Water Advisor – జల మిత్ర</h2>
+        <p class="section-desc" data-i18n="waterDesc">
+          Avoid under-watering and harmful waterlogging. Calculate scientifically tailored watering schedules based on crop growth stage, soil texture, and real-time weather.
+        </p>
+      </div>
+
+      <div class="irrigation-grid">
+        <!-- Input Form -->
+        <div class="card irrigation-input-card">
+          <h3 class="card-inner-title"><i class="fa-solid fa-sliders"></i> <span data-i18n="waterFormTitle">Field Conditions Input</span></h3>
+
+          <form id="waterAdvisorForm" onsubmit="event.preventDefault();">
+            <!-- Crop Selection -->
+            <div class="form-group">
+              <label for="waterCrop" class="form-label"><i class="fa-solid fa-seedling"></i> <span data-i18n="irriCropLabel">Crop Type:</span></label>
+              <select id="waterCrop" class="form-select">
+                <option value="paddy">Paddy / Rice (వరి)</option>
+                <option value="cotton">Cotton (ప్రత్తి)</option>
+                <option value="tomato">Tomato / Vegetables (కూరగాయలు)</option>
+                <option value="chilli">Chilli / Mirchi (మిరప)</option>
+                <option value="maize">Maize (మొక్కజొన్న)</option>
+                <option value="groundnut">Groundnut (వేరుశనగ)</option>
+                <option value="sugarcane">Sugarcane (చెరకు)</option>
+              </select>
+            </div>
+
+            <!-- Growth Stage -->
+            <div class="form-group">
+              <label for="waterStage" class="form-label"><i class="fa-solid fa-stairs"></i> <span data-i18n="irriStageLabel">Growth Stage:</span></label>
+              <select id="waterStage" class="form-select">
+                <option value="seedling">Germination / Seedling Stage (మొలక దశ)</option>
+                <option value="vegetative" selected>Vegetative Growth (శాకీయ పెరుగుదల)</option>
+                <option value="flowering">Flowering & Fruit/Grain Setting (పూత, పిందె దశ - Critical)</option>
+                <option value="maturity">Ripening & Pre-Harvest (కోత దశ)</option>
+              </select>
+            </div>
+
+            <!-- Soil Type -->
+            <div class="form-group">
+              <label for="waterSoil" class="form-label"><i class="fa-solid fa-mountain"></i> <span data-i18n="irriSoilLabel">Soil Type:</span></label>
+              <select id="waterSoil" class="form-select">
+                <option value="clay">Black Cotton / Heavy Clay (నల్లరేగడి నేల - High Moisture Retention)</option>
+                <option value="loamy" selected>Loamy / Alluvial Soil (మట్టి నేల / ఒండ్రు - Balanced)</option>
+                <option value="sandy">Sandy / Red Sandy Soil (ఇసుక నేల - Quick Drainage)</option>
+              </select>
+            </div>
+
+            <!-- Weather Condition -->
+            <div class="form-group">
+              <label for="waterWeather" class="form-label"><i class="fa-solid fa-cloud-sun"></i> <span data-i18n="irriWeatherLabel">Current Weather:</span></label>
+              <select id="waterWeather" class="form-select">
+                <option value="sunny">Hot & Sunny / High Evaporation (ఎండ ఎక్కువగా ఉంది)</option>
+                <option value="cloudy" selected>Mild & Cloudy / Overcast (తేలికపాటి మేఘావృతం)</option>
+                <option value="humid">High Humidity / Cool (అధిక తేమ)</option>
+                <option value="rainy">Rainy / Rain Expected (వర్షం పడే సూచన ఉంది)</option>
+              </select>
+            </div>
+
+            <button type="button" id="btnCalculateWater" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-calculator"></i> <span data-i18n="btnCalcIrrigation">Calculate Watering Schedule</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Output Schedule Card -->
+        <div class="card irrigation-output-card">
+          <div class="output-header">
+            <div>
+              <span class="card-tag" data-i18n="irrigationScheduleTag">AI Water Recommendation</span>
+              <h3 class="output-title" id="waterPlanHeading">Customized Irrigation Schedule</h3>
+            </div>
+            <div class="status-indicator-badge" id="waterActionStatus">Moderate Need</div>
+          </div>
+
+          <div class="output-metrics-grid">
+            <div class="plan-metric">
+              <div class="plan-icon text-blue"><i class="fa-solid fa-calendar-days"></i></div>
+              <div>
+                <span class="plan-label" data-i18n="irriFreqLabel">Watering Frequency</span>
+                <span class="plan-val" id="waterFreqVal">Every 3 to 4 Days</span>
+              </div>
+            </div>
+
+            <div class="plan-metric">
+              <div class="plan-icon text-cyan"><i class="fa-solid fa-faucet-drip"></i></div>
+              <div>
+                <span class="plan-label" data-i18n="irriQtyLabel">Water Quantity / Depth</span>
+                <span class="plan-val" id="waterQtyVal">30 - 35 mm (2.5 hrs Drip)</span>
+              </div>
+            </div>
+
+            <div class="plan-metric">
+              <div class="plan-icon text-amber"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span class="plan-label" data-i18n="irriTimeLabel">Optimal Watering Time</span>
+                <span class="plan-val" id="waterTimeVal">Early Morning (6:00 - 8:30 AM)</span>
+              </div>
+            </div>
+
+            <div class="plan-metric">
+              <div class="plan-icon text-green"><i class="fa-solid fa-leaf"></i></div>
+              <div>
+                <span class="plan-label" data-i18n="irriMethodLabel">Recommended Method</span>
+                <span class="plan-val" id="waterMethodVal">Drip / Alternate Furrow</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agronomist Guidance -->
+          <div class="irrigation-advice-box">
+            <h4 class="advice-title"><i class="fa-solid fa-circle-check"></i> <span data-i18n="agronomistNote">Agronomist Recommendation:</span></h4>
+            <p id="waterDetailedAdvice">Your crop is in vegetative growth stage. Soil moisture retention is moderate. Water during early morning to reduce 25% evaporative loss.</p>
+          </div>
+
+          <!-- Water Saving Tip -->
+          <div class="water-save-tip">
+            <div class="tip-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="tip-body">
+              <strong data-i18n="smartSaverTipTitle">Smart Water-Saving Tip:</strong>
+              <span id="waterSaverTip">Apply organic straw mulching around the root zone. This retains 30-40% more moisture and suppresses weed germination!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Weather Dashboard & Moisture Center -->
+  <section class="section weather-section" id="weather-dashboard">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge" data-i18n="weatherSectionBadge">Real-Time Agronomic Insights</div>
+        <h2 class="section-title" data-i18n="weatherSectionTitle">Live Weather & Soil Command Center</h2>
+        <p class="section-desc" data-i18n="weatherSectionDesc">Monitor regional micro-climate forecasts, interactive soil moisture levels, and APMC Mandi rates to plan farm activities effectively.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Weather Card -->
+        <div class="card weather-card">
+          <div class="card-header-flex">
+            <div>
+              <span class="card-tag" data-i18n="weatherCardTag">Local Weather</span>
+              <h3 class="card-title" id="weatherLocationName">Guntur, Andhra Pradesh</h3>
+            </div>
+            <div class="weather-icon-big">
+              <i class="fa-solid fa-cloud-sun" id="weatherMainIcon"></i>
+            </div>
+          </div>
+
+          <div class="weather-body">
+            <div class="temp-display">
+              <span class="temp-value" id="weatherTemp">32</span><span class="temp-unit">°C</span>
+              <span class="weather-cond" id="weatherCondition" data-i18n="weatherCondSunny">Sunny with Light Clouds</span>
+            </div>
+            <div class="weather-metrics">
+              <div class="metric-item">
+                <i class="fa-solid fa-droplet text-blue"></i>
+                <div>
+                  <span class="m-val" id="weatherHumidity">62%</span>
+                  <span class="m-lbl" data-i18n="humidityLabel">Humidity</span>
+                </div>
+              </div>
+              <div class="metric-item">
+                <i class="fa-solid fa-wind text-green"></i>
+                <div>
+                  <span class="m-val" id="weatherWind">12 km/h</span>
+                  <span class="m-lbl" data-i18n="windLabel">Wind</span>
+                </div>
+              </div>
+              <div class="metric-item">
+                <i class="fa-solid fa-cloud-rain text-cyan"></i>
+                <div>
+                  <span class="m-val" id="weatherRainChance">15%</span>
+                  <span class="m-lbl" data-i18n="rainChanceLabel">Rain Chance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Region Switcher -->
+          <div class="weather-footer">
+            <label for="districtSelect" class="form-label-inline"><i class="fa-solid fa-location-dot"></i> <span data-i18n="changeRegionLabel">Switch Region:</span></label>
+            <select id="districtSelect" class="select-small">
+              <option value="guntur">Guntur (గుంటూరు)</option>
+              <option value="warangal">Warangal (వరంగల్)</option>
+              <option value="kurnool">Kurnool (కర్నూలు)</option>
+              <option value="vijayawada">Vijayawada (విజయవాడ)</option>
+              <option value="nizamabad">Nizamabad (నిజామాబాద్)</option>
+              <option value="pune">Pune, Maharashtra</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Soil Moisture Simulator -->
+        <div class="card soil-card">
+          <div class="card-header-flex">
+            <div>
+              <span class="card-tag" data-i18n="soilCardTag">Soil Moisture Monitor</span>
+              <h3 class="card-title" data-i18n="soilCardTitle">Interactive Sensor Simulator</h3>
+            </div>
+            <div class="soil-icon-status" id="soilStatusIcon">
+              <i class="fa-solid fa-circle-check text-success"></i>
+            </div>
+          </div>
+
+          <div class="soil-body">
+            <div class="moisture-slider-container">
+              <div class="slider-labels">
+                <span data-i18n="soilDry">Dry (ఎండిన)</span>
+                <span data-i18n="soilOptimal">Optimal (సరిపడా)</span>
+                <span data-i18n="soilSaturated">Waterlogged (అధిక నీరు)</span>
+              </div>
+              <input type="range" id="moistureSlider" min="10" max="95" value="52" class="moisture-range-slider">
+              <div class="moisture-value-pill">
+                <span data-i18n="currentMoisture">Current Moisture:</span> <strong id="moistureValueText">52%</strong>
+              </div>
+            </div>
+
+            <div class="soil-advice-box" id="soilAdviceBox">
+              <div class="advice-head">
+                <i class="fa-solid fa-lightbulb"></i> <strong id="soilStatusHeading">Optimal Moisture Level</strong>
+              </div>
+              <p id="soilStatusDetails">Moisture is balanced. Roots have good access to water and oxygen. No immediate irrigation needed today.</p>
+            </div>
+          </div>
+
+          <div class="soil-footer-tips">
+            <small><i class="fa-solid fa-circle-info"></i> <span data-i18n="sliderTip">Slide the bar to test how AI advises farmers at different moisture stages!</span></small>
+          </div>
+        </div>
+
+        <!-- Mandi Market Price Card -->
+        <div class="card market-card">
+          <div class="card-header-flex">
+            <div>
+              <span class="card-tag" data-i18n="marketCardTag">APMC Mandi Rates</span>
+              <h3 class="card-title" data-i18n="marketCardTitle">Today's Crop Prices (₹/Qtl)</h3>
+            </div>
+            <span class="badge-live-pulse" data-i18n="badgeSimulated">SIMULATED DATA</span>
+          </div>
+
+          <div class="market-list" id="marketPriceList">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <div class="market-footer">
+            <small class="text-muted"><i class="fa-solid fa-clock-rotate-left"></i> <span data-i18n="mandiUpdated">Updated today • Direct market average for major regional APMCs</span></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Crop Risk Checker (Plant Health & Disease Diagnostics) -->
+  <section class="section crop-risk-section" id="crop-risk">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge" data-i18n="doctorBadge">Crop Health AI Assistant</div>
+        <h2 class="section-title" data-i18n="doctorTitle">Crop Risk Checker – Plant Disease Diagnosis</h2>
+        <p class="section-desc" data-i18n="doctorDesc">
+          Select your crop and observed symptoms. FarmRakshak AI evaluates risk level, identifies probable pathogens, and provides organic and safe chemical control measures.
+        </p>
+      </div>
+
+      <!-- Advisory Disclaimer -->
+      <div class="advisory-disclaimer">
+        <i class="fa-solid fa-shield-halved disclaimer-icon"></i>
+        <div class="disclaimer-text">
+          <strong data-i18n="disclaimerTitle">Educational Advisory Disclaimer:</strong>
+          <span data-i18n="disclaimerBody">
+            Results provided by FarmRakshak AI are simulated for educational and preliminary advisory guidance. For critical field emergencies or heavy infestations, always confirm with your local Mandal Agriculture Officer (MAO) or Krishi Vigyan Kendra (KVK).
+          </span>
+        </div>
+      </div>
+
+      <div class="doctor-container">
+        <!-- Form -->
+        <div class="card doctor-form-card">
+          <h3 class="card-inner-title"><i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="diagnoseFormTitle">Enter Crop Symptoms</span></h3>
+          
+          <form id="cropDiagnosisForm" onsubmit="event.preventDefault();">
+            <!-- Step 1: Crop -->
+            <div class="form-group">
+              <label for="cropSelect" class="form-label">
+                <i class="fa-solid fa-wheat-awn"></i> <span data-i18n="selectCropLabel">1. Select Your Crop:</span>
+              </label>
+              <select id="cropSelect" class="form-select">
+                <option value="rice">Rice / Paddy (వరి)</option>
+                <option value="cotton">Cotton (ప్రత్తి)</option>
+                <option value="chilli">Chilli / Mirchi (మిరప)</option>
+                <option value="tomato">Tomato (టమాట)</option>
+                <option value="maize">Maize / Corn (మొక్కజొన్న)</option>
+                <option value="groundnut">Groundnut (వేరుశనగ)</option>
+                <option value="wheat">Wheat (గోధుమ)</option>
+              </select>
+            </div>
+
+            <!-- Step 2: Symptoms -->
+            <div class="form-group">
+              <label for="symptomSelect" class="form-label">
+                <i class="fa-solid fa-bug"></i> <span data-i18n="selectSymptomLabel">2. Observed Symptoms on Crop:</span>
+              </label>
+              <select id="symptomSelect" class="form-select">
+                <!-- Dynamically populated via JS -->
+              </select>
+            </div>
+
+            <!-- Image Preview -->
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fa-solid fa-camera"></i> <span data-i18n="sampleImageLabel">3. Field Sample Image (Auto-Loaded or Custom):</span>
+              </label>
+              <div class="image-preview-wrapper">
+                <img id="sampleDiseaseImg" src="https://images.unsplash.com/photo-1599818815129-8473853119df?auto=format&fit=crop&w=500&q=80" alt="Symptom Sample" class="sample-crop-img">
+                <div class="img-caption-pill" id="imageCaptionText">Rice Blast Sample Leaf</div>
+              </div>
+              <div class="custom-file-upload">
+                <label for="userImageInput" class="custom-file-label">
+                  <i class="fa-solid fa-upload"></i> <span data-i18n="uploadLabel">Upload Your Own Photo (Optional Preview)</span>
+                </label>
+                <input type="file" id="userImageInput" accept="image/*" style="display:none;">
+              </div>
+            </div>
+
+            <button type="button" id="btnDiagnose" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="btnAnalyzeCrop">Run AI Crop Risk Assessment</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Output Result Card -->
+        <div class="card doctor-result-card" id="doctorResultCard">
+          <div class="result-placeholder" id="resultPlaceholder">
+            <i class="fa-solid fa-stethoscope placeholder-icon"></i>
+            <h4 data-i18n="placeholderTitle">No Diagnosis Run Yet</h4>
+            <p data-i18n="placeholderDesc">Choose a crop and observed symptom on the left, then click 'Run AI Crop Risk Assessment' to view the simulated results and treatment.</p>
+          </div>
+
+          <div class="diagnosis-content" id="diagnosisContent" style="display: none;">
+            <div class="diagnosis-header">
+              <div>
+                <span class="simulated-pill"><i class="fa-solid fa-microchip"></i> <span data-i18n="simulatedMatch">Simulated AI Match</span></span>
+                <h3 class="disease-name" id="resultDiseaseName">Rice Blast (వరి అగ్గితెగులు)</h3>
+                <span class="scientific-name" id="resultScientificName">Pathogen: Magnaporthe oryzae (Fungus)</span>
+              </div>
+              <div class="confidence-box">
+                <div class="confidence-circle" id="resultConfidenceCircle">94%</div>
+                <span class="confidence-label" data-i18n="confidenceMatch">Match Confidence</span>
+              </div>
+            </div>
+
+            <div class="severity-container">
+              <span class="severity-label" data-i18n="severityLabel">Risk Level:</span>
+              <span class="severity-badge" id="resultSeverityBadge">High Risk</span>
+            </div>
+
+            <div class="result-section-box">
+              <h4 class="box-title text-danger"><i class="fa-solid fa-triangle-exclamation"></i> <span data-i18n="possibleCausesTitle">Identified Probable Causes:</span></h4>
+              <p id="resultCauses" class="box-desc">Excess nitrogenous fertilizer, continuous high humidity above 90%, and cool night temperatures favour fungal spore germination.</p>
+            </div>
+
+            <div class="result-section-box">
+              <h4 class="box-title text-warning"><i class="fa-solid fa-bolt"></i> <span data-i18n="immediateCareTitle">Immediate Field Action:</span></h4>
+              <p id="resultImmediateAction" class="box-desc">Immediately drain excess stagnant water from the field. Temporarily pause top-dressing of urea/nitrogen fertilizers.</p>
+            </div>
+
+            <div class="result-section-box remedy-organic">
+              <h4 class="box-title text-success"><i class="fa-solid fa-leaf"></i> <span data-i18n="organicRemedyTitle">Organic & Biological Remedies:</span></h4>
+              <p id="resultOrganicRemedy" class="box-desc">Spray 5% Neem Seed Kernel Extract (NSKE) or 5ml Neem Oil per liter with soap surfactant. Soil application of Pseudomonas fluorescens (2.5 kg/ha).</p>
+            </div>
+
+            <div class="result-section-box remedy-chemical">
+              <h4 class="box-title text-info"><i class="fa-solid fa-flask-vial"></i> <span data-i18n="chemicalRemedyTitle">Recommended Safe Chemical Control:</span></h4>
+              <p id="resultChemicalRemedy" class="box-desc">Spray Tricyclazole 75% WP @ 0.6g/L or Isoprothiolane 40% EC @ 1.5ml/L of clean water during early morning hours.</p>
+            </div>
+
+            <div class="result-section-box">
+              <h4 class="box-title text-purple"><i class="fa-solid fa-shield-virus"></i> <span data-i18n="preventionTitle">Prevention for Next Crop Season:</span></h4>
+              <p id="resultPrevention" class="box-desc">Use certified blast-resistant seed varieties (such as MTU-1010, BPT-5204 treated) and perform seed treatment with Carbendazim (2g/kg seed).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Farm Records (డిజిటల్ రైతు రికార్డులు) -->
+  <section class="section farm-records-section" id="farm-records">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge" data-i18n="recordsBadge">Digital Farm Diary</div>
+        <h2 class="section-title" data-i18n="recordsTitle">Farm Records – Digital Field Logbook</h2>
+        <p class="section-desc" data-i18n="recordsDesc">
+          Track sowing dates, fertilizer sprays, irrigation events, and farm expenses directly on your device. Never lose track of your investment or harvest milestones.
+        </p>
+      </div>
+
+      <!-- Farm Records Summary Cards -->
+      <div class="records-summary-grid">
+        <div class="summary-card">
+          <div class="summary-icon text-green"><i class="fa-solid fa-folder-open"></i></div>
+          <div>
+            <span class="summary-label" data-i18n="totalRecordsLabel">Total Activities Logged</span>
+            <span class="summary-val" id="summaryTotalRecords">0</span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon text-amber"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div>
+            <span class="summary-label" data-i18n="totalExpenseLabel">Total Farm Investment</span>
+            <span class="summary-val" id="summaryTotalExpense">₹0</span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon text-blue"><i class="fa-solid fa-wheat-awn"></i></div>
+          <div>
+            <span class="summary-label" data-i18n="activeCropsLabel">Active Tracked Crops</span>
+            <span class="summary-val" id="summaryActiveCrops">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="records-layout-grid">
+        <!-- New Record Entry Form -->
+        <div class="card record-entry-card">
+          <h3 class="card-inner-title"><i class="fa-solid fa-plus-circle"></i> <span data-i18n="newRecordTitle">Add New Farm Entry</span></h3>
+
+          <form id="farmRecordForm" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="recCrop" class="form-label"><i class="fa-solid fa-seedling"></i> <span data-i18n="recCropLabel">Crop Name:</span></label>
+              <select id="recCrop" class="form-select">
+                <option value="Paddy (వరి)">Paddy / Rice (వరి)</option>
+                <option value="Cotton (ప్రత్తి)">Cotton (ప్రత్తి)</option>
+                <option value="Chilli (మిరప)">Chilli (మిరప)</option>
+                <option value="Tomato (టమాట)">Tomato (టమాట)</option>
+                <option value="Maize (మొక్కజొన్న)">Maize (మొక్కజొన్న)</option>
+                <option value="Groundnut (వేరుశనగ)">Groundnut (వేరుశనగ)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="recPlot" class="form-label"><i class="fa-solid fa-map-location-dot"></i> <span data-i18n="recPlotLabel">Field / Plot Name:</span></label>
+              <input type="text" id="recPlot" class="form-input" placeholder="e.g. North Acre 1 / ఉత్తర చేను" value="Plot 1 (North Field)">
+            </div>
+
+            <div class="form-group">
+              <label for="recActivity" class="form-label"><i class="fa-solid fa-list-check"></i> <span data-i18n="recActivityLabel">Operation / Activity Type:</span></label>
+              <select id="recActivity" class="form-select">
+                <option value="Sowing / Planting">Sowing / Planting (విత్తడం / నాట్లు)</option>
+                <option value="Fertilizer / Organic Manure">Fertilizer / Manure (ఎరువుల యాజమాన్యం)</option>
+                <option value="Irrigation">Irrigation / Watering (నీటి తడి)</option>
+                <option value="Pest Spray">Pest / Disease Spray (పురుగు మందు పిచికారీ)</option>
+                <option value="Weeding & Labor">Weeding & Labor (కలుపు & కూలీలు)</option>
+                <option value="Harvest & Sale">Harvest & Sale (కోత & విక్రయం)</option>
+              </select>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="recDate" class="form-label"><i class="fa-solid fa-calendar"></i> <span data-i18n="recDateLabel">Date:</span></label>
+                <input type="date" id="recDate" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="recCost" class="form-label"><i class="fa-solid fa-indian-rupee-sign"></i> <span data-i18n="recCostLabel">Cost / Expense (₹):</span></label>
+                <input type="number" id="recCost" class="form-input" placeholder="e.g. 1500" min="0" value="1200">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="recNotes" class="form-label"><i class="fa-solid fa-pen-to-square"></i> <span data-i18n="recNotesLabel">Notes / Observations:</span></label>
+              <input type="text" id="recNotes" class="form-input" placeholder="e.g. Applied 100L Jeevamrutha through drip">
+            </div>
+
+            <button type="button" id="btnAddRecord" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-check"></i> <span data-i18n="btnSaveRecord">Save Farm Record</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Records Table / List -->
+        <div class="card record-list-card">
+          <div class="card-header-flex">
+            <div>
+              <span class="card-tag" data-i18n="recordsListTag">Saved Logbook</span>
+              <h3 class="card-title" data-i18n="recordsListTitle">Field Activity History</h3>
+            </div>
+            <button type="button" id="btnClearAllRecords" class="btn btn-outline btn-sm" title="Clear all local data">
+              <i class="fa-solid fa-trash-can"></i> <span data-i18n="btnClearAll">Reset</span>
+            </button>
+          </div>
+
+          <div class="records-table-container">
+            <div id="recordsEmptyState" class="records-empty" style="display: none;">
+              <i class="fa-solid fa-clipboard-list empty-icon"></i>
+              <h4 data-i18n="emptyRecordsTitle">No Records Added Yet</h4>
+              <p data-i18n="emptyRecordsDesc">Add your first farm entry on the left to track dates, expenses, and crop milestones.</p>
+            </div>
+
+            <div class="records-scroll-box" id="recordsScrollBox">
+              <table class="records-table" id="recordsTable">
+                <thead>
+                  <tr>
+                    <th data-i18n="thDate">Date</th>
+                    <th data-i18n="thCrop">Crop & Plot</th>
+                    <th data-i18n="thActivity">Activity</th>
+                    <th data-i18n="thCost">Cost</th>
+                    <th data-i18n="thNotes">Notes</th>
+                    <th data-i18n="thAction">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="recordsTableBody">
+                  <!-- Dynamically populated via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Sustainable Farming Care Guide -->
+  <section class="section guide-section" id="guide">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="sub-badge" data-i18n="guideBadge">Best Farming Practices</div>
+        <h2 class="section-title" data-i18n="guideTitle">Crop Care & Sustainable Farming Guide</h2>
+        <p class="section-desc" data-i18n="guideDesc">Actionable, cost-effective agricultural tips tested by Krishi Vigyan Kendras to maximize crop health and profitability.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="guide-filter-tabs">
+        <button class="filter-btn active" data-filter="all" data-i18n="tabAll">All Tips</button>
+        <button class="filter-btn" data-filter="organic" data-i18n="tabOrganic">Organic Farming</button>
+        <button class="filter-btn" data-filter="pest" data-i18n="tabPest">Pest Management</button>
+        <button class="filter-btn" data-filter="soil" data-i18n="tabSoil">Soil & Nutrients</button>
+        <button class="filter-btn" data-filter="water" data-i18n="tabWater">Water Saving</button>
+      </div>
+
+      <!-- Guide Cards Grid -->
+      <div class="guide-cards-grid" id="guideCardsGrid">
+        <!-- Dynamically rendered via JS for dual language support -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: About Project & Hackathon Mission -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-info">
+          <div class="sub-badge" data-i18n="aboutBadge">Why We Built This</div>
+          <h2 class="section-title" data-i18n="aboutTitle">Empowering Indian Farmers with Accessible AI</h2>
+          <p class="about-text" data-i18n="aboutP1">
+            Over 82% of Indian farmers are smallholders operating on less than 2 hectares of land. When sudden pests strike or irregular weather hits, they often travel miles to input dealers who sell expensive chemicals.
+          </p>
+          <p class="about-text" data-i18n="aboutP2">
+            <strong>FarmRakshak AI (రైతు రక్షక్)</strong> was conceptualized during this college hackathon as a lightweight, zero-barrier, digital agronomy assistant. It works on low-cost smartphones without costly hardware, offering guidance in regional languages like Telugu alongside English.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-check-double highlight-icon"></i>
+              <div>
+                <strong data-i18n="point1Title">Zero Cost, Zero Dependencies:</strong>
+                <p data-i18n="point1Desc">Runs purely in modern web browsers without requiring credit cards or paid cloud API keys.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-language highlight-icon"></i>
+              <div>
+                <strong data-i18n="point2Title">Bilingual Inclusivity:</strong>
+                <p data-i18n="point2Desc">Instant one-click toggle between English and Telugu ensures local farmers can understand every advisory.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-droplet highlight-icon"></i>
+              <div>
+                <strong data-i18n="point3Title">Climate-Resilient Agriculture:</strong>
+                <p data-i18n="point3Desc">Promotes natural formulations like Jeevamrutha, Neem sprays, and efficient drip scheduling.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hackathon Tech & Architecture Card -->
+        <div class="about-card">
+          <div class="card hackathon-card">
+            <div class="hackathon-tag">
+              <i class="fa-solid fa-trophy"></i> <span data-i18n="hackathonCardTag">Hackathon Project Blueprint</span>
+            </div>
+            <h3 class="hackathon-title" data-i18n="techStackTitle">Technology & Architecture</h3>
+
+            <div class="tech-stack-list">
+              <div class="tech-pill">
+                <i class="fa-brands fa-html5 text-orange"></i> HTML5 (Semantic Structure)
+              </div>
+              <div class="tech-pill">
+                <i class="fa-brands fa-css3-alt text-blue"></i> CSS3 (Responsive Grid & Animations)
+              </div>
+              <div class="tech-pill">
+                <i class="fa-brands fa-js text-yellow"></i> JavaScript (ES6+ Logic & i18n Engine)
+              </div>
+              <div class="tech-pill">
+                <i class="fa-solid fa-database text-green"></i> LocalStorage (Farm Records Persistence)
+              </div>
+              <div class="tech-pill">
+                <i class="fa-solid fa-bolt text-cyan"></i> Vercel Ready (Static Edge Deployment)
+              </div>
+            </div>
+
+            <div class="future-roadmap">
+              <h4 data-i18n="futureTitle"><i class="fa-solid fa-compass"></i> Future Scope / Phase 2:</h4>
+              <ul>
+                <li data-i18n="future1">📡 Integration with Raspberry Pi / ESP32 soil NPK sensors.</li>
+                <li data-i18n="future2">🛰️ Satellite NDVI vegetation index via ISRO Bhuvan open data.</li>
+                <li data-i18n="future3">🎙️ Voice-assisted regional queries for farmers who prefer audio.</li>
+                <li data-i18n="future4">📱 WhatsApp Chatbot via Twilio / Gupshup messaging API.</li>
+              </ul>
+            </div>
+
+            <div class="student-note">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span data-i18n="studentCredit">Built with dedication by a 1st-Year College Hackathon Team.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <div class="logo footer-logo">
+          <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <span class="brand-title">FarmRakshak <span class="highlight-ai">AI</span></span>
+        </div>
+        <p class="footer-desc" data-i18n="footerDesc">
+          Smart farming companion empowering rural agriculture with data-driven, practical, and eco-friendly solutions.
+        </p>
+        <div class="footer-kisan-box">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <strong data-i18n="govtHelpline">Govt. Kisan Call Center:</strong>
+            <p><a href="tel:18001801551">1800-180-1551 (Toll Free)</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home" data-i18n="navHome">Home</a></li>
+          <li><a href="#water-advisor" data-i18n="navWater">Smart Water Advisor</a></li>
+          <li><a href="#weather-dashboard" data-i18n="navWeather">Weather Dashboard</a></li>
+          <li><a href="#crop-risk" data-i18n="navCropRisk">Crop Risk Checker</a></li>
+          <li><a href="#farm-records" data-i18n="navRecords">Farm Records</a></li>
+          <li><a href="#guide" data-i18n="navGuide">Farming Guide</a></li>
+          <li><a href="#about" data-i18n="navAbout">About Project</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="supportedCropsTitle">Supported Crops</h4>
+        <ul class="footer-links">
+          <li>Paddy / Rice (వరి)</li>
+          <li>Cotton (ప్రత్తి)</li>
+          <li>Chilli / Mirchi (మిరప)</li>
+          <li>Tomato (టమాట)</li>
+          <li>Maize (మొక్కజొన్న)</li>
+          <li>Groundnut (వేరుశనగ)</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="disclaimerHeader">Legal & Safety Note</h4>
+        <p class="footer-disclaimer-text" data-i18n="footerDisclaimer">
+          FarmRakshak AI is an educational technology prototype. Advice generated is rule-assisted and simulated. Farmers should exercise discretion and consult local agriculture extension departments before chemical investments.
+        </p>
+        <div class="social-tags">
+          <span class="badge"><i class="fa-solid fa-code"></i> Pure Frontend</span>
+          <span class="badge"><i class="fa-solid fa-bolt"></i> Fast & Free</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2025-2026 FarmRakshak AI – Smart Farming Assistant. Created for College Hackathon.</p>
+        <p><span data-i18n="madeWithLove">Made with 🌱 for Indian Farmers.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
